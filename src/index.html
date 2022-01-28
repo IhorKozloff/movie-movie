@@ -10,14 +10,63 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/main.css"/>
   </head>
   <body>
-    <section class="header-section">
-      
-    </section>
+    <header class="header-section">
+<nav>
+    <svg class="header-icon" width="24px" height="24px" fill="#fff">
+      <use href="images/sprite.svg#icon-header-logo-icon"></use>
+    </svg>
+  <ul class="navigation-buttons">
+    <li class="navigation-buttons__item">
+      <button class="navigation-btn btn-home1 active" type="button" data-navBtn="home">home</button>
+    </li>
+    <li class="navigation-buttons__item">
+      <button class="navigation-btn btn-library1" type="button" data-navBtn="library">my library</button>
+    </li>
+  </ul>
+</nav>
+<form class="header-form">
+  <input type="text" placeholder="Поиск фильмов" class="search-input">
+  <svg class="search-icon" width="12px" height="12px" fill="#fff">
+    <use href="images/sprite.svg#icon-header-form-search-icon"></use>
+  </svg>
+</form>
+    </header>
+    <div class="gallery1" data-section="main-section"></div>
     
+<!-- <ul class="card" style="display: block">
+  <li style="margin-bottom: 20px">
+    <p>Картинка первого элемента</p>
+    <p>Описание первого элемента</p>
+  </li>
+  <li style="margin-bottom: 20px">
+    <p>Картинка второго элемента</p>
+    <p>Описание первого элемента</p>
+  </li>
+  <li style="margin-bottom: 20px">
+    <p>Картинка третьего элемента</p>
+    <p>Описание первого элемента</p>
+  </li>
+</ul>
 
-    
+<ul class="card" style="display: block">
+  <li style="margin-bottom: 20px">
+    <p>Избранное (картинка)</p>
+    <p>Избранное 1</p>
+  </li>
+  <li style="margin-bottom: 20px">
+    <p>Избранное (картинка)</p>
+    <p>Избранное 2</p>
+  </li>
+  <li style="margin-bottom: 20px">
+    <p>Избранное (картинка)</p>
+    <p>Избранное 3</p>
+  </li>
+</ul> -->
+<script src="./active-page.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
