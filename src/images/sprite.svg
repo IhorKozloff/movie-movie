@@ -1,18 +1,18 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
-<symbol id="icon-header-form-search-icon" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667z"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M28 28.001l-5.8-5.8"></path>
+<symbol id="icon-search-icon" viewBox="0 0 32 32">
+<path fill="#fff" style="fill: var(--color1, #fff)" d="M14.667 2.667c-6.612 0-12 5.388-12 12s5.388 12 12 12c6.612 0 12-5.388 12-12s-5.388-12-12-12zM14.667 5.333c5.17 0 9.333 4.163 9.333 9.333s-4.163 9.333-9.333 9.333c-5.17 0-9.333-4.163-9.333-9.333s4.163-9.333 9.333-9.333z"></path>
+<path fill="#fff" style="fill: var(--color1, #fff)" d="M22.198 20.87c-0.002 0-0.003 0-0.005 0-0.366 0-0.697 0.147-0.938 0.386l0-0c-0.243 0.242-0.393 0.576-0.393 0.945s0.15 0.704 0.393 0.945l5.802 5.797c0.241 0.241 0.575 0.39 0.943 0.39s0.701-0.149 0.943-0.39v0c0.241-0.241 0.39-0.575 0.39-0.943s-0.149-0.701-0.39-0.943l-5.802-5.802c-0.241-0.238-0.572-0.385-0.938-0.385-0.002 0-0.004 0-0.005 0h0z"></path>
 </symbol>
-<symbol id="icon-header-logo-icon" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M26.427 2.667h-20.853c-1.605 0-2.907 1.301-2.907 2.907v20.853c0 1.605 1.301 2.907 2.907 2.907h20.853c1.605 0 2.907-1.301 2.907-2.907v-20.853c0-1.605-1.301-2.907-2.907-2.907z"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M9.333 2.667v26.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 2.667v26.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M2.667 16h26.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M2.667 9.333h6.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M2.667 22.667h6.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 22.667h6.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 9.333h6.667"></path>
+<symbol id="icon-logo-icon" viewBox="0 0 32 32">
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M5.573 1.333c-2.326 0-4.24 1.914-4.24 4.24v20.854c0 2.326 1.914 4.24 4.24 4.24h20.854c2.326 0 4.24-1.914 4.24-4.24v-20.854c0-2.326-1.914-4.24-4.24-4.24zM5.573 4h20.854c0.885 0 1.573 0.688 1.573 1.573v20.854c0 0.885-0.688 1.573-1.573 1.573h-20.854c-0.885 0-1.573-0.688-1.573-1.573v-20.854c0-0.885 0.688-1.573 1.573-1.573z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M9.333 1.333c-0.736 0-1.333 0.597-1.333 1.333v0 26.667c0 0.736 0.597 1.333 1.333 1.333v0c0.736 0 1.333-0.597 1.333-1.333v0-26.667c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M22.667 1.333c-0.736 0-1.333 0.597-1.333 1.333v0 26.667c0 0.736 0.597 1.333 1.333 1.333v0c0.736 0 1.333-0.597 1.333-1.333v0-26.667c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M2.667 14.667c-0.736 0-1.333 0.597-1.333 1.333v0c0 0.736 0.597 1.333 1.333 1.333v0h26.667c0.736 0 1.333-0.597 1.333-1.333v0c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M2.667 8c-0.736 0-1.333 0.597-1.333 1.333v0c0 0.736 0.597 1.333 1.333 1.333v0h6.667c0.736 0 1.333-0.597 1.333-1.333v0c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M2.667 21.333c-0.736 0-1.333 0.597-1.333 1.333v0c0 0.736 0.597 1.333 1.333 1.333v0h6.667c0.736 0 1.333-0.597 1.333-1.333v0c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M22.667 21.333c-0.736 0-1.333 0.597-1.333 1.333v0c0 0.736 0.597 1.333 1.333 1.333v0h6.667c0.736 0 1.333-0.597 1.333-1.333v0c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
+<path fill="#818181" style="fill: var(--color2, #818181)" d="M22.667 8c-0.736 0-1.333 0.597-1.333 1.333v0c0 0.736 0.597 1.333 1.333 1.333v0h6.667c0.736 0 1.333-0.597 1.333-1.333v0c0-0.736-0.597-1.333-1.333-1.333v0z"></path>
 </symbol>
 </defs>
 </svg>

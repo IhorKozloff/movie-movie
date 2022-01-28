@@ -1,11 +1,24 @@
+
+
+
+
+
+
+
 .header-section {
-    width: 320px;
+    max-width: 320px;
     padding: 46px 20px 97px 20px;
     background-image: url("/images/mobile-header-background-1x.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    @media (min-width: 321px) {
+        max-width: 768px;
+        padding: 46px 76px 97px 71px;
+        background-image: url("/images/header-background-tablet-x1.jpg");
+    }
 
 }
+
 nav {
     display: flex;
     align-items: flex-end;
