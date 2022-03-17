@@ -25,10 +25,10 @@ ul {
 
 .container {
   margin: 0 auto;
+  max-width: 1024px;
 }
 
 .header-container {
-  max-width: 1024px;
   padding: 46px 20px 97px 20px;
   background-image: url("/images/mobile-header-background-1x.jpg");
   background-repeat: no-repeat;
@@ -184,4 +184,95 @@ nav {
 
 .company {
   text-decoration: underline;
+}
+
+.modal-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+}
+
+.modal-inform-movie {
+  width: 880px;
+  border: 1px solid black;
+  padding: 50px 30px 40px 30px;
+  display: flex;
+  position: absolute;
+  background-color: #FFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inform-block {
+  margin-left: 30px;
+}
+
+.movie-inform {
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.inform-item {
+  display: flex;
+}
+.inform-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.item-name {
+  width: 70px;
+  margin-right: 85px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8C8C8C;
+  text-align: start;
+}
+
+.item-value {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.movie-description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.movie-description p {
+  text-align: start;
+}
+
+.description-text {
+  margin-top: 10px;
+}
+
+.infrom-btns-wrapper {
+  max-width: 295px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inform-btn {
+  width: 140px;
+  height: 45px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: #FFF;
+}
+.inform-btn:hover {
+  background-color: #FF6B01;
+  color: #FFF;
 }/*# sourceMappingURL=main.css.map */
