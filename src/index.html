@@ -30,10 +30,12 @@
             </ul>
         </nav>
         <form class="header-form">
-          <input type="text" placeholder="Поиск фильмов" class="search-input">
-          <svg class="search-icon" width="12px" height="12px" fill="#fff">
-            <use href="images/sprite.svg#icon-search-icon"></use>
-          </svg>
+          <input type="text" name="movie" placeholder="Поиск фильмов" class="search-input">
+          <button type="submit" class="search-form-btn">
+            <svg class="search-icon" width="12px" height="12px" fill="#fff">
+              <use href="images/sprite.svg#icon-search-icon"></use>
+            </svg>
+          </button>
         </form>
       </div>
     </header>
@@ -79,6 +81,7 @@
     </section>
     <div class="modal-overlay">
       <div class="modal-inform-movie">
+        <button type="button" class="modal-btn-close">X</button>
       <img src="/images/header-background-desktop-x1.jpg" alt="" width="400px" height="477px">
       <div class="inform-block">
         <h2>A FISTFUL OF LEAD</h2>
@@ -108,7 +111,7 @@
           </p>
         </div>
         <div class="infrom-btns-wrapper">
-          <button type="button" class="inform-btn" data-inform-btn="watched">watched</button>
+          <button type="button" class="inform-btn" data-inform-btn="watched">add to Watched </button>
           <button type="button" class="inform-btn" data-inform-btn="queue">queue</button>
         </div>
       </div>

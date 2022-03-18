@@ -1,23 +1,36 @@
 .modal-overlay {
     position: fixed;
-    // background-image: linear-gradient(to right, rgba 206,204,202, 0.3, rgba 206,204,202, 0.3);
+    background-color: rgba(47, 48, 58, 0.5);
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: #000000;
-
+    opacity: 0;
+    pointer-events: none;
+    &.active {
+        opacity: 1;
+    }
 }
+
 .modal-inform-movie {
     width: 880px;
     border: 1px solid black;
     padding: 50px 30px 40px 30px;
     display: flex;
     position: absolute;
-   background-color: #FFF;
+    background-color: #FFF;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+.modal-btn-close {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .inform-block {
     margin-left: 30px;

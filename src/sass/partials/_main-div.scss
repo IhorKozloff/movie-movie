@@ -10,6 +10,9 @@
     max-width: 280px;
     width: 100%;
     margin: 0 auto;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .card__img {
     width: 280px;
