@@ -30,22 +30,27 @@
     font-size: 12px;
     line-height: 16px;
     color: #FF6B08;
-    position: relative;
+    // position: relative;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .movie-release {
     margin-left: 6px;
+    position: relative;
 }
-.movie-release::before {
+.movie-release-delimeter {
     content: '';
     width: 1px;
     height: 10px;
     display: block;
-    position: absolute;
-    top: 3px;
-    left: 78px;
+    // position: absolute;
+    // top: 0px;
+    // left: -6px;
+    margin-left: 5px;
     background-color: #FF6B08;
+   
 }
 .movie-rating {
     margin-left: 10px;
