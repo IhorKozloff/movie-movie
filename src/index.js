@@ -20,7 +20,7 @@ const beginingInterface = {
       
     API.searchAPIName(searchedMovie).then(result => {
       console.log(result[0])
-      moviesRenderOnPage(result);
+      beginingInterface.moviesRenderOnPage(result);
     });
   },
   

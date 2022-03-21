@@ -67,5 +67,5 @@ function onModalWindowCloseBtn (event) {
     return
   }
   document.querySelector('.modal-overlay').remove();
-  refs.galeryEl.removeEventListener('click', onModalWindowCloseBtn);
+  // refs.galeryEl.removeEventListener('click', onModalWindowCloseBtn);
 };
