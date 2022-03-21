@@ -198,11 +198,7 @@ nav {
   height: 100vh;
   top: 0;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.modal-overlay.active {
-  opacity: 1;
+  z-index: 10;
 }
 
 .modal-inform-movie {
@@ -221,10 +217,16 @@ nav {
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: none;
+  background-color: #FFF;
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
+  transition: background-color 750ms ease;
+}
+.modal-btn-close:hover {
+  background-color: #8C8C8C;
 }
 
 .inform-block {
