@@ -204,6 +204,7 @@ nav {
 .modal-inform-movie {
   width: 880px;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 50px 30px 40px 30px;
   display: flex;
   position: absolute;

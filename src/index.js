@@ -18,9 +18,9 @@ const beginingInterface = {
     const searchedMovie = e.currentTarget.elements.movie.value;
     console.log(searchedMovie)
       
-    API.searchAPIName(searchedMovie).then(result => {
-      console.log(result[0])
-      beginingInterface.moviesRenderOnPage(result);
+    API.searchAPIName(searchedMovie).then(dataToRenderFunction => {
+      console.log(dataToRenderFunction)
+      beginingInterface.moviesRenderOnPage(dataToRenderFunction);
     });
   },
   

@@ -1,18 +1,30 @@
 import { API } from './API'
 import { refs } from './refs';
 
+
+let dataToLocaleStorage = {};
+let watchedStorage = [];
+let queueStorage = [];
+
 export function onCardClick (event) {
   if (event.target.nodeName !== "IMG") {
     return;
   }
   const idToSearch = event.target.dataset.id;
+  
+
+
+
 
   API.searchAPIbyID(idToSearch).then(result => {
       
     refs.galeryEl.insertAdjacentHTML("afterbegin", modalWindowRender(result));
-      
+    dataToLocaleStorage = result;
+    console.log(dataToLocaleStorage)
   });
   refs.galeryEl.addEventListener('click', onModalWindowCloseBtn);
+  refs.galeryEl.addEventListener('click', onAddToWatched);
+  refs.galeryEl.addEventListener('click', onQueue);
 };
 
 function modalWindowRender ({poster_path, original_title, popularity, genres, vote_average, vote_count, overview}) {
@@ -67,5 +79,25 @@ function onModalWindowCloseBtn (event) {
     return
   }
   document.querySelector('.modal-overlay').remove();
-  // refs.galeryEl.removeEventListener('click', onModalWindowCloseBtn);
+  refs.galeryEl.removeEventListener('click', onModalWindowCloseBtn);
 };
+
+function onAddToWatched (event) {
+  if (event.target.dataset.informBtn !== "watched") {
+    return
+  }
+  watchedStorage.push(dataToLocaleStorage)
+  localStorage.setItem("watched-storage", JSON.stringify(watchedStorage));
+};
+function onQueue (event) {
+  if (event.target.dataset.informBtn !== "queue") {
+    return
+  }
+  queueStorage.push(dataToLocaleStorage)
+  localStorage.setItem("queue-storage", JSON.stringify(queueStorage));
+};
+
+// function onLocaleStorage (storageName) {
+//   storageName.push(dataToLocaleStorage)
+//   localStorage.setItem(`${storageName}`, JSON.stringify(storageName));
+// };
