@@ -6,10 +6,12 @@
 
 
 .header-container {
+    position: relative;
     padding: 46px 20px 97px 20px;
     background-image: url("/images/mobile-header-background-1x.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    
     @media (min-width: 321px) {
         padding: 46px 76px 97px 71px;
         background-image: url("/images/header-background-tablet-x1.jpg");
@@ -17,6 +19,14 @@
     @media (min-width: 769px) {
         
         background-image: url("/images/header-background-desktop-x1.jpg");
+        &.library {
+            background-image: url("/images/headerInLibrary/header-inLibrary-desctop.jpg");
+            & .header-form {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
     }
 
 }
@@ -81,7 +91,18 @@ nav {
   }
 
 }
-.search-icon {
+.library-btn-wrapper {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
     
-
+    &.libraryOn {
+        opacity: 1;
+        pointer-events:all;
+         
+    }
 }
+

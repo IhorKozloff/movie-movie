@@ -1,4 +1,5 @@
-import { GENRES } from './genres' 
+import { GENRES } from './genres';
+import { refs } from './refs'; 
 
 export const makerAndRender = {
     releaseDateConverter (dateString) {
@@ -33,6 +34,11 @@ export const makerAndRender = {
                 </div>
         `
     },
-    
+    moviesRenderOnPage (data) {
+      refs.galeryEl.innerHTML = data.reduce((forRender, item) => {
+        return forRender += makerAndRender.movieCardMaker(item);
+      }, "");
+    },
     
 };
+
