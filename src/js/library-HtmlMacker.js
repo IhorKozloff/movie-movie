@@ -2,6 +2,7 @@ import { refs } from './refs';
 import {makerAndRender} from './galerry-HtmlMacker';
 
 
+
 function onLibraryWatchedBtn () {
 if (!refs.libraryWatchedBtnEl.classList.contains('library-active')) {
 
@@ -25,31 +26,33 @@ function onLibraryQueueBtn () {
 
 function watchedSectionRender () {
     console.log('ПОшла рендерится секция Вотчед');
-    if (localStorage.getItem("watched-storage")){
-        makerAndRender.moviesRenderOnPage(toLibraryRenderDataCreator("watched-storage"));
-    } else {
-        refs.galeryEl.innerHTML = `<p>В разделе WATCHED еще ничего нет</p>`
-    }
+    getAndRenderDataFromLocalStorage('watched-storage');
+    
 };
 
 function queueSectionRender () {
     console.log('ПОшла рендерится секция Кьюв-е');
-    if (localStorage.getItem("queue-storage")){
-        makerAndRender.moviesRenderOnPage(toLibraryRenderDataCreator("queue-storage"));
-    } else {
-        refs.galeryEl.innerHTML = `<p>В разделе QUEUE еще ничего нет</p>`
-    }
+    getAndRenderDataFromLocalStorage('queue-storage');
 };
 
 
 function toLibraryRenderDataCreator (storage) {
-    const downloadFromLocaleStorage = JSON.parse(localStorage.getItem(storage));
- 
 
-    return downloadFromLocaleStorage.map(item => {
+    return storage.map(item => {
       item.genre_ids = item.genres.map(genresObject => genresObject.id);
       return item;
     })
    
 }
-export { onLibraryWatchedBtn, onLibraryQueueBtn };
+
+function getAndRenderDataFromLocalStorage (storage) {
+    const storageDownloadData = JSON.parse(localStorage.getItem(storage));
+    if (storageDownloadData){
+        
+        makerAndRender.moviesRenderOnPage(toLibraryRenderDataCreator(storageDownloadData));
+    } else {
+        
+        refs.galeryEl.innerHTML = `<p>В ${storage.split("-")[0]} пока еще пусто</p>`
+    }
+}
+export { onLibraryWatchedBtn, onLibraryQueueBtn, watchedSectionRender, queueSectionRender };

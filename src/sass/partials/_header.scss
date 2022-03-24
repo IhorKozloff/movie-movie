@@ -37,6 +37,21 @@ nav {
     margin-bottom: 41px;
     justify-content:space-between;
 }
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+.logo-name {
+    color: #fff;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+
+}
 .navigation-buttons__item:not(:last-child) {
     margin-right: 39px;
 }
@@ -104,5 +119,8 @@ nav {
         pointer-events:all;
          
     }
+}
+.pre-gallery {
+    position: relative;
 }
 

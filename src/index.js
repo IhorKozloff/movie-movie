@@ -1,7 +1,7 @@
 import { API } from './js/API';
 import { refs } from './js/refs';
 import { makerAndRender } from './js/galerry-HtmlMacker';
-import { onCardClick } from './js/modal-window-functional';
+import { onCardClick, onTrailerBtn } from './js/modal-window-functional';
 import { onHomeBtn, onSubmitSearchForm, onLibraryBtn } from './js/header-functional';
 import { onLibraryWatchedBtn, onLibraryQueueBtn } from './js/library-HtmlMacker';
 
@@ -22,6 +22,7 @@ refs.homeBtnEl.addEventListener('click', onHomeBtn);
 refs.libraryBtnEl.addEventListener('click', onLibraryBtn);
 refs.libraryWatchedBtnEl.addEventListener('click', onLibraryWatchedBtn);
 refs.libraryQueueBtnEl.addEventListener('click', onLibraryQueueBtn);
+
 
 
 

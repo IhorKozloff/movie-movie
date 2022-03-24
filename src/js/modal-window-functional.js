@@ -1,6 +1,7 @@
 import { API } from './API'
 import { refs } from './refs';
 import { modalWindowRender } from './modal-window-html-maker';
+import { watchedSectionRender, queueSectionRender } from './library-HtmlMacker';
 
 let movieDataObjectToLocalStorage = {};
 
@@ -17,12 +18,28 @@ export function onCardClick (event) {
 
   API.searchAPIbyID(idToSearch).then(result => {
       
-    refs.galeryEl.insertAdjacentHTML("afterbegin", modalWindowRender(result));
+    refs.preGalleryEl.innerHTML = `${modalWindowRender(result)}`;
+    
     movieDataObjectToLocalStorage = result;
   });
-  refs.galeryEl.addEventListener('click', onModalWindowCloseBtn);
-  refs.galeryEl.addEventListener('click', onAddToWatched);
-  refs.galeryEl.addEventListener('click', onQueue);
+  refs.preGalleryEl.addEventListener('click', onModalWindowCloseBtn);
+  refs.preGalleryEl.addEventListener('click', onAddToWatched);
+  refs.preGalleryEl.addEventListener('click', onQueue);
+
+
+  function onTrailerBtn (event) {
+    if(!event.target.classList.contains('trailer-btn')) {
+      return;
+    }
+    API.searchAPIVideos(idToSearch).then(trailersCatalogue => {
+      console.log(trailersCatalogue[0])
+    })
+
+  }
+  refs.preGalleryEl.addEventListener('click', onTrailerBtn);
+
+  
+  
 };
 
 
@@ -56,28 +73,34 @@ function onAddToWatched (event) {
 
   if (localStorage.getItem("watched-storage")){
     const downloadFromLocaleStorage = JSON.parse(localStorage.getItem("watched-storage"));
-    
-    
     const check = downloadFromLocaleStorage.find(item => item.id === movieDataObjectToLocalStorage.id);
-    
-  
-  
   
     if (!check) {
       downloadFromLocaleStorage.push(movieDataObjectToLocalStorage);
       localStorage.setItem("watched-storage", JSON.stringify(downloadFromLocaleStorage));
     } else {
       downloadFromLocaleStorage.splice(downloadFromLocaleStorage.indexOf(check), 1);
-      localStorage.setItem("watched-storage", JSON.stringify(downloadFromLocaleStorage));
+
+      if (downloadFromLocaleStorage.length === 0) {
+        localStorage.removeItem("watched-storage");
+      } else {
+        localStorage.setItem("watched-storage", JSON.stringify(downloadFromLocaleStorage));
+      }
+      
+      if (refs.libraryWatchedBtnEl.classList.contains('library-active')) {
+        watchedSectionRender();
+      }
+      
+    
     };
   
-  
-    } else {
-      const toStorageArr = [];
-      toStorageArr.push(movieDataObjectToLocalStorage)
-      localStorage.setItem("watched-storage", JSON.stringify(toStorageArr));
-    }
-
+  //иначе если локал сторедж не тру - создать массив запихнуть туда обьект и залить в созданный локал сторедж
+  } else {
+    const toStorageArr = [];
+    toStorageArr.push(movieDataObjectToLocalStorage)
+    localStorage.setItem("watched-storage", JSON.stringify(toStorageArr));
+  }
+//замена текста в кнопках
     if(event.target.textContent === "add to watched") {
       event.target.textContent = "remove watched";
     } else {
@@ -93,12 +116,6 @@ function onQueue (event) {
   }
   console.log('нажато на кьюве')
 
-
-
-
-
-
-
 if (localStorage.getItem("queue-storage")){
   const downloadFromLocaleStorage = JSON.parse(localStorage.getItem("queue-storage"));
   
@@ -113,7 +130,14 @@ if (localStorage.getItem("queue-storage")){
     localStorage.setItem("queue-storage", JSON.stringify(downloadFromLocaleStorage));
   } else {
     downloadFromLocaleStorage.splice(downloadFromLocaleStorage.indexOf(check), 1);
-    localStorage.setItem("queue-storage", JSON.stringify(downloadFromLocaleStorage));
+    if (downloadFromLocaleStorage.length === 0) {
+      localStorage.removeItem("queue-storage");
+    } else {
+      localStorage.setItem("queue-storage", JSON.stringify(downloadFromLocaleStorage));
+    }
+    if (refs.libraryQueueBtnEl.classList.contains('library-active')) {
+      queueSectionRender();
+    }
   };
 
 
