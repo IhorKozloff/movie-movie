@@ -354,4 +354,12 @@ nav {
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#ytplayer {
+  position: absolute;
+  width: 880px;
+  z-index: 20;
+  top: 0;
+  left: 0;
 }/*# sourceMappingURL=main.css.map */

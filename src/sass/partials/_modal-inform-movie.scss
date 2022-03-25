@@ -113,3 +113,14 @@
     left: 50%;
     transform: translateX(-50%);
 }
+#ytplayer {
+    position: absolute;
+    width: 880px;
+    z-index: 20;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // transform: translateY(-50%);
+    top: 0;
+    left: 0;
+}

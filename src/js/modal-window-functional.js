@@ -33,6 +33,13 @@ export function onCardClick (event) {
     }
     API.searchAPIVideos(idToSearch).then(trailersCatalogue => {
       console.log(trailersCatalogue[0])
+      const youTubeRef = `http://www.youtube.com/embed/${trailersCatalogue[0].key}`;
+      console.log(youTubeRef);
+      const trailerMurkUp = `
+        <iframe id="ytplayer" type="text/html" width="880" height="600" frameborder="0" allowfullscreen allow="autoplay" src="http://www.youtube.com/embed/${trailersCatalogue[0].key}?autoplay=1"
+        <iframe/>
+      `;
+      document.querySelector('.modal-inform-movie').insertAdjacentHTML('afterbegin', trailerMurkUp);
     })
 
   }
