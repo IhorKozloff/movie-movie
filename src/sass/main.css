@@ -467,4 +467,12 @@ nav {
 }
 .trailer-close-btn:hover {
   opacity: 1;
+}
+
+.more-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
 }/*# sourceMappingURL=main.css.map */

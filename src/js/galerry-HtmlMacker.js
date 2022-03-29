@@ -21,7 +21,7 @@ export const makerAndRender = {
       
         return  `
                 <div class="card">
-                    <img src=https://image.tmdb.org/t/p/w500${poster_path} width="280" height="398" data-id="${id}">
+                    <img src=https://image.tmdb.org/t/p/w300${poster_path} width="280" height="398" data-id="${id}">
                     <div class="card__description">
                       <h4 class="movie-name">${title}</h4>
                       <div class="movie-spesification">
@@ -39,6 +39,19 @@ export const makerAndRender = {
         return forRender += makerAndRender.movieCardMaker(item);
       }, "");
     },
+    moviesAddOnPage (data) {
+      refs.galeryEl.insertAdjacentHTML('beforeend', data.reduce((forRender, item) => {
+        return forRender += makerAndRender.movieCardMaker(item);
+      }, ""))
+    },
+    seeMoreBtnRender () {
+      refs.galeryEl.insertAdjacentHTML('beforeend', `
+        <div class="more-btn-wrapper">
+          <button type="button" class="inform-btn watch-more" id="watch-more-btn">watch more</button>
+        </div>  
+      `)
+    },
     
 };
+
 

@@ -4,14 +4,32 @@ import { makerAndRender } from './js/galerry-HtmlMacker';
 import { onCardClick, onTrailerBtn } from './js/modal-window-functional';
 import { onHomeBtn, onSubmitSearchForm, onLibraryBtn } from './js/header-functional';
 import { onLibraryWatchedBtn, onLibraryQueueBtn } from './js/library-HtmlMacker';
+// import { moreBtnIndicator } from './js/more-btn-functional';
 
 
 
 function onStart () {
+  
+   
+
   API.searchAPITop().then(result => {
-    makerAndRender.moviesRenderOnPage(result);
+    const totalPages = result.total_pages;
     
-  });
+    makerAndRender.moviesRenderOnPage(result.results);
+    // если у резалта число страниц больше  константы - то загрузить кнопку
+  })
+  // .then(x => {
+  //   makerAndRender.seeMoreBtnRender();
+  //   const moreBtnEl = document.querySelector('#watch-more-btn');
+  //   moreBtnEl.addEventListener('click', onMoreBtn);
+
+
+  //   function onMoreBtn () {
+  //     console.log('Загрузить еще');
+  //   }
+  // });
+ 
+  
 };
 
 
