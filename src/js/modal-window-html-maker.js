@@ -47,15 +47,14 @@ function modalWindowGenresConverter (data) {
     }).join(", ");
 };  
   
-  // Рендеринг
+  // Рендеринг модального окна
 export function modalWindowRender ({poster_path, original_title, popularity, genres, vote_average, vote_count, overview, id}) {
     return `
       <div class="modal-overlay">
         <div class="modal-inform-movie">
-          <button type="button" class="modal-btn-close">X</button>
+          <button type="button" class="modal-btn-close"></button>
           <div class="image-wrapper">
-            <img src="https://image.tmdb.org/t/p/w300${poster_path}" alt="" width="400px" height="477px">
-            <button type="button" class="inform-btn trailer-btn">Trailer</button>
+            <img src="https://image.tmdb.org/t/p/w400${poster_path}" alt="" width="400px" height="477px">
           </div>
           <div class="inform-block">
             <h2>${original_title}</h2>
@@ -86,9 +85,29 @@ export function modalWindowRender ({poster_path, original_title, popularity, gen
               <button type="button" class="inform-btn" data-inform-btn="watched">${watchedTextContentGenerate(id)}</button>
               <button type="button" class="inform-btn" data-inform-btn="queue">${queueTextContentGenerate(id)}</button>
             </div>
+            <div class="trailer-btn-wrapper">
+              <div class="trailer-tittle-wrapper">
+                <p class="trailer-tittle trailer-tittle-upper">watch</p>
+                <p class="trailer-tittle trailer-tittle-lower">trailer</p>
+              </div>
+              <span class="trailer-pointer"></span>
+              <button type="button" class="inform-btn trailer-btn"></button>
+            </div>
           </div>
         </div>
       </div>
    `
 };
+
+export function modalWindowTrailerRender ({key}) {
+  const youTubeRef = `http://www.youtube.com/embed/${key}`;
+      console.log(youTubeRef);
+      const trailerMurkUp = `
+          <iframe id="ytplayer" type="text/html" width="890" height="600" frameborder="0" allowfullscreen allow="autoplay" 
+          src="http://www.youtube.com/embed/${key}?autoplay=1"></iframe>
+          <button type="button" class="trailer-close-btn"> Close</button>
+      `;
+      document.querySelector('.modal-inform-movie').insertAdjacentHTML('afterbegin', trailerMurkUp);
+}
   // .........................................
+  

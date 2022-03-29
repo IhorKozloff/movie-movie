@@ -1,6 +1,6 @@
 import { API } from './API'
 import { refs } from './refs';
-import { modalWindowRender } from './modal-window-html-maker';
+import { modalWindowRender, modalWindowTrailerRender } from './modal-window-html-maker';
 import { watchedSectionRender, queueSectionRender } from './library-HtmlMacker';
 
 let movieDataObjectToLocalStorage = {};
@@ -32,14 +32,16 @@ export function onCardClick (event) {
       return;
     }
     API.searchAPIVideos(idToSearch).then(trailersCatalogue => {
-      console.log(trailersCatalogue[0])
-      const youTubeRef = `http://www.youtube.com/embed/${trailersCatalogue[0].key}`;
-      console.log(youTubeRef);
-      const trailerMurkUp = `
-        <iframe id="ytplayer" type="text/html" width="880" height="600" frameborder="0" allowfullscreen allow="autoplay" src="http://www.youtube.com/embed/${trailersCatalogue[0].key}?autoplay=1"
-        <iframe/>
-      `;
-      document.querySelector('.modal-inform-movie').insertAdjacentHTML('afterbegin', trailerMurkUp);
+      console.log(trailersCatalogue[0]);
+      modalWindowTrailerRender(trailersCatalogue[0]);
+    }).then(result => {
+      const trailerCloseBtn = document.querySelector('.trailer-close-btn');
+      trailerCloseBtn .addEventListener('click', onTrailerCloseBtn);
+
+      function onTrailerCloseBtn () {
+        document.querySelector('#ytplayer').remove();
+        trailerCloseBtn.remove();
+      }
     })
 
   }
