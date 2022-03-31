@@ -1,35 +1,22 @@
-import { API } from './js/API';
+import Api from './js/API';
 import { refs } from './js/refs';
 import { makerAndRender } from './js/galerry-HtmlMacker';
 import { onCardClick, onTrailerBtn } from './js/modal-window-functional';
 import { onHomeBtn, onSubmitSearchForm, onLibraryBtn } from './js/header-functional';
 import { onLibraryWatchedBtn, onLibraryQueueBtn } from './js/library-HtmlMacker';
-// import { moreBtnIndicator } from './js/more-btn-functional';
-
+import { moreBtnIndicator } from './js/more-btn-functional';
+import { apiServise } from './js/header-functional';
 
 
 function onStart () {
-  
-   
 
-  API.searchAPITop().then(result => {
-    const totalPages = result.total_pages;
+  apiServise.searchAPITop().then(result => {
+    console.log(result);
     
     makerAndRender.moviesRenderOnPage(result.results);
-    // если у резалта число страниц больше  константы - то загрузить кнопку
-  })
-  // .then(x => {
-  //   makerAndRender.seeMoreBtnRender();
-  //   const moreBtnEl = document.querySelector('#watch-more-btn');
-  //   moreBtnEl.addEventListener('click', onMoreBtn);
-
-
-  //   function onMoreBtn () {
-  //     console.log('Загрузить еще');
-  //   }
-  // });
+    moreBtnIndicator(result);
  
-  
+  });
 };
 
 

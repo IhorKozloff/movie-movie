@@ -44,13 +44,7 @@ export const makerAndRender = {
         return forRender += makerAndRender.movieCardMaker(item);
       }, ""))
     },
-    seeMoreBtnRender () {
-      refs.galeryEl.insertAdjacentHTML('beforeend', `
-        <div class="more-btn-wrapper">
-          <button type="button" class="inform-btn watch-more" id="watch-more-btn">watch more</button>
-        </div>  
-      `)
-    },
+    
     
 };
 

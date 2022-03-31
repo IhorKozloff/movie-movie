@@ -1,32 +1,10 @@
-import { API } from './API';
 import { refs } from './refs';
 import { makerAndRender } from './galerry-HtmlMacker';
 import { onLibraryWatchedBtn } from './library-HtmlMacker';
-// import { moreBtnIndicator } from './more-btn-functional';
+import { moreBtnIndicator } from './more-btn-functional';
+import Api from './API';
 
-
-let pageCount = 1;  
-let totalPages;
-let searchedMovie = '';
-
-
-function onMoreBtn () {
-  document.querySelector('#watch-more-btn').removeEventListener('click', onMoreBtn);
-  document.querySelector('#watch-more-btn').remove();
-  pageCount += 1;
-
-
-    API.searchAPIName(searchedMovie, pageCount).then(dataToRenderFunction => {
-      console.log(dataToRenderFunction)
-      makerAndRender.moviesAddOnPage(dataToRenderFunction.data.results);
-   
-      if (pageCount < totalPages) {
-        makerAndRender.seeMoreBtnRender();
-        document.querySelector('#watch-more-btn').addEventListener('click', onMoreBtn);
-      }
-    
-    })
-};
+export const apiServise = new Api;
 
 function onHomeBtn () {
     window.location.reload()
@@ -45,27 +23,21 @@ function onLibraryBtn () {
 
 
 function onSubmitSearchForm (e) {
-    e.preventDefault();
+  e.preventDefault();
    
-    searchedMovie = e.currentTarget.elements.movie.value;
-    console.log(searchedMovie)
+  const searchedMovie = e.currentTarget.elements.movie.value;
+  console.log(searchedMovie)
     
 
-    API.searchAPIName(searchedMovie, pageCount).then(dataToRenderFunction => {
-      console.log(dataToRenderFunction)
-      makerAndRender.moviesRenderOnPage(dataToRenderFunction.data.results);
+  apiServise.searchAPIName(searchedMovie).then(dataToRenderFunction => {
+    console.log(dataToRenderFunction)
 
-      totalPages = dataToRenderFunction.data.total_pages;
-      
-      console.log(totalPages)
-   
-      if (pageCount < totalPages) {
-        makerAndRender.seeMoreBtnRender();
-        document.querySelector('#watch-more-btn').addEventListener('click', onMoreBtn);
-      }
+
+    makerAndRender.moviesRenderOnPage(dataToRenderFunction.results);
+    moreBtnIndicator(dataToRenderFunction)
     
-    })
-0;}
+  });
+};
 
 
 
