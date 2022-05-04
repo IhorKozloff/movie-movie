@@ -1,4 +1,5 @@
 import { API } from './API'
+import { apiServise } from './header-functional';
 import { refs } from './refs';
 import { modalWindowRender, modalWindowTrailerRender } from './modal-window-html-maker';
 import { watchedSectionRender, queueSectionRender } from './library-HtmlMacker';
@@ -16,7 +17,7 @@ export function onCardClick (event) {
 
 
 
-  API.searchAPIbyID(idToSearch).then(result => {
+  apiServise.searchAPIbyID(idToSearch).then(result => {
       
     refs.preGalleryEl.innerHTML = `${modalWindowRender(result)}`;
     
@@ -31,7 +32,7 @@ export function onCardClick (event) {
     if(!event.target.classList.contains('trailer-btn')) {
       return;
     }
-    API.searchAPIVideos(idToSearch).then(trailersCatalogue => {
+    apiServise.searchAPIVideos(idToSearch).then(trailersCatalogue => {
       console.log(trailersCatalogue[0]);
       modalWindowTrailerRender(trailersCatalogue[0]);
     }).then(result => {
